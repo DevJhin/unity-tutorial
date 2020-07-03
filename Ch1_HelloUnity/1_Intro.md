@@ -30,8 +30,7 @@ https://unity3d.com/get-unity/download
 # 2. Editor 둘러보기
 프로젝트를 생성하는 데 성공했으니, 이제 본격적으로 유니티 엔진 에디터가 제공하는 기본 도구들과 작업들을 차근차근 하나씩 살펴봅시다.
 
-![d](images/1_Editor.PNG)
-
+![d](images/1_Editor.png)
 
 
 ## Scene View
@@ -44,9 +43,8 @@ Game 뷰에서는 실제 게임이 실행되었을 때, 사용자 시점에서 �
 ![d](images/1_GameView.gif)
 
 **알아두세요!**
-![d](images/1_GameViewRatio.png)
 > GameView에서는 상단의 탭에서 화면 비율을 조절할 수 있습니다.
-
+![d](images/1_GameViewRatio.png)
 
 ## Hierarchy Window
 Hierarchy 창에서는 현재 실행중인 Scene에 생성되어 있는 오브젝트들을 관리할 수 있습니다. 이렇게 게임 환경(Scene)에 배치되어 게임에 필요한 작업을 수행하는 객체들을 **GameObject** 라고 부릅니다.
@@ -71,7 +69,7 @@ Project 창에서는 프로젝트에 사용되는 리소스 파일들을 관리�
 
 간단한 예제로 에셋을 하나 생성하고, 이동시키고, 삭제하는 작업을 연습해보겠습니다.
 
-#### 에셋 생성 하기
+### 에셋 생성 하기
 ![d](images/1_CreateAsset.gif)
 1. Project 창에서 오른쪽 버튼 마우스를 클릭해서 메뉴 창을 엽니다.
 2. 'Create' 메뉴창에서 생성할 에셋(예: Material)을 하나 선택해서 생성합니다.
@@ -82,12 +80,12 @@ Project 창에서는 프로젝트에 사용되는 리소스 파일들을 관리�
 > 프로젝트 에셋들은 종류별로 분류해서 체계적으로 관리하는 것이 좋습니다.
 
 
-#### 에셋 이동 하기
+### 에셋 이동 하기
 ![d](images/1_MoveAsset.gif)
 1. Project 창에서 이동할 에셋을 선택합니다.
 2. 선택한 에셋을 이동시키고싶은 폴더로 드래그해서 옮깁니다.
 
-#### 에셋 삭제 하기
+### 에셋 삭제 하기
 ![d](images/1_DeleteAsset.gif)
 1. Project 창에서 이동할 에셋을 선택합니다.
 2. 키보드의 Delete 버튼이나 오른쪽 마우스 클릭 후, Delete 탭을 누릅니다.
@@ -95,10 +93,8 @@ Project 창에서는 프로젝트에 사용되는 리소스 파일들을 관리�
 
 
 **주의하세요!**
-
-![d](images/1_DeleteWarning.png)
 > 삭제 경고창에도 나와있듯이, 에셋 파일을 삭제하는 작업은 되돌릴 수 없습니다. 즉, Ctrl + z 등으로 작업을 취소하여 삭제한 피일을 되돌릴 수 없기 때문에 에셋 파일은 항상 신중하게 관리해야 합니다.
-
+![d](images/1_DeleteWarning.png)
 
 
 ## Inspector Window
@@ -108,6 +104,7 @@ Inspector 창에서는 현재 선택중인 GameObject에 대한 자세한 정보
 
 ## Toolbar
 ### 메뉴 툴
+
 ![d](images/1_ToolWindow.png)
 Toolbar 에서는 유니티 엔진이 편리한 게임 제작을 위해 지원하는 다양한 기능들을 확인하실 수 있습니다. 예를 들면, Hierarchy 파트에서 연습했던 새로운 GameObject를 Scene에 추가하는 작업을 Tool 창의 'GameObject' 메뉴를 통해서도 수행할 수 있습니다.
 
@@ -116,16 +113,19 @@ Toolbar 에서는 유니티 엔진이 편리한 게임 제작을 위해 지원�
 아까 위에서 생성했던 Cube를 이 조작 툴을 이용해서 움직여봅시다.
 
 **1. 이동 툴**
+
 ![d](images/1_MoveTool.png)
 이동툴에서 보여지는 화살표를 클릭해서 드래그하면 원하는 방향으로 오브젝트를 움직일 수 있습니다.
 ![d](images/1_MoveTool.gif)
 
 **2. 회전 툴**
+
 ![d](images/1_RotTool.png)
 오브젝트를 회전시키고 싶은 축의 원을 선택하여 드래그하여 원하는 방향으로 오브젝트를 회전시킬 수 있습니다.
 ![d](images/1_RotTool.gif)
 
 **3. 크기 조절 툴**
+
 ![d](images/1_ScaleTool.png)
 이동 툴과 비슷하게, 원하는 방향의 화살표를 클랙해서 드래그하여 해당 방향으로 오브젝트의 크기를 조절할 수 있습니다.
 ![d](images/1_ScaleTool.gif)
