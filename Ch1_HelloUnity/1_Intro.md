@@ -94,6 +94,7 @@ Project 창에서는 프로젝트에 사용되는 리소스 파일들을 관리�
 
 **주의하세요!**
 > 삭제 경고창에도 나와있듯이, 에셋 파일을 삭제하는 작업은 되돌릴 수 없습니다. 즉, Ctrl + z 등으로 작업을 취소하여 삭제한 피일을 되돌릴 수 없기 때문에 에셋 파일은 항상 신중하게 관리해야 합니다.
+
 ![d](images/1_DeleteWarning.png)
 
 
@@ -105,35 +106,35 @@ Inspector 창에서는 현재 선택중인 GameObject에 대한 자세한 정보
 ## Toolbar
 ### 메뉴 툴
 
-![d](images/1_ToolWindow.png)
+![d](images/1_ToolWindow.PNG)
 Toolbar 에서는 유니티 엔진이 편리한 게임 제작을 위해 지원하는 다양한 기능들을 확인하실 수 있습니다. 예를 들면, Hierarchy 파트에서 연습했던 새로운 GameObject를 Scene에 추가하는 작업을 Tool 창의 'GameObject' 메뉴를 통해서도 수행할 수 있습니다.
 
 ### 조작 툴
-![d](images/1_Toolbar.png)
+![d](images/1_Toolbar.PNG)
 아까 위에서 생성했던 Cube를 이 조작 툴을 이용해서 움직여봅시다.
 
 **1. 이동 툴**
 
-![d](images/1_MoveTool.png)
+![d](images/1_MoveTool.PNG)
 이동툴에서 보여지는 화살표를 클릭해서 드래그하면 원하는 방향으로 오브젝트를 움직일 수 있습니다.
 ![d](images/1_MoveTool.gif)
 
 **2. 회전 툴**
 
-![d](images/1_RotTool.png)
+![d](images/1_RotTool.PNG)
 오브젝트를 회전시키고 싶은 축의 원을 선택하여 드래그하여 원하는 방향으로 오브젝트를 회전시킬 수 있습니다.
 ![d](images/1_RotTool.gif)
 
 **3. 크기 조절 툴**
 
-![d](images/1_ScaleTool.png)
+![d](images/1_ScaleTool.PNG)
 이동 툴과 비슷하게, 원하는 방향의 화살표를 클랙해서 드래그하여 해당 방향으로 오브젝트의 크기를 조절할 수 있습니다.
 ![d](images/1_ScaleTool.gif)
 
 
 
 ## Play/Stop Buttons
-![d](images/1_PlayButtons.png)
+![d](images/1_PlayButtons.PNG)
 
 Play버튼과 Stop 버튼은 실제 게임 환경을 실행/중지 할 수 있는 버튼입니다. 프로그램에 심각한 오류(Compile Error 등)가 없는 한, 언제든지 Play 버튼을 눌러서 게임을 실행하여 테스트할 수 있습니다.
 
