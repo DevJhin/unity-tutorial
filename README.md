@@ -2,8 +2,8 @@
 유니티 튜토리얼 메인 페이지 입니다.
 
 ### Chapter 1: Hello, Unity
-#### 1. [Intro]("Ch1_HelloUnity\1_Intro.md")
-#### 2. [GameObject]("Ch1_HelloUnity\2_GameObject.md")
+#### 1. [Intro](Ch1_HelloUnity/1_Intro.md)
+#### 2. [GameObject](Ch1_HelloUnity/2_GameObject.md)
 
 
 ## Chapter 2: Unity Basic Scripting
