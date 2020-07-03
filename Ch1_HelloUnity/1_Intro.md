@@ -106,7 +106,7 @@ Inspector 창에서는 현재 선택중인 GameObject에 대한 자세한 정보
 ## Toolbar
 ### 메뉴 툴
 
-![d](images/1_ToolWindow.PNG)
+![d](images/1_ToolWindow.png)
 Toolbar 에서는 유니티 엔진이 편리한 게임 제작을 위해 지원하는 다양한 기능들을 확인하실 수 있습니다. 예를 들면, Hierarchy 파트에서 연습했던 새로운 GameObject를 Scene에 추가하는 작업을 Tool 창의 'GameObject' 메뉴를 통해서도 수행할 수 있습니다.
 
 ### 조작 툴
