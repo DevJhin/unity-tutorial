@@ -111,23 +111,27 @@ Toolbar 에서는 유니티 엔진이 편리한 게임 제작을 위해 지원�
 
 ### 조작 툴
 ![d](images/1_Toolbar.PNG)
+
 아까 위에서 생성했던 Cube를 이 조작 툴을 이용해서 움직여봅시다.
 
 **1. 이동 툴**
 
 ![d](images/1_MoveTool.PNG)
+
 이동툴에서 보여지는 화살표를 클릭해서 드래그하면 원하는 방향으로 오브젝트를 움직일 수 있습니다.
 ![d](images/1_MoveTool.gif)
 
 **2. 회전 툴**
 
 ![d](images/1_RotTool.PNG)
+
 오브젝트를 회전시키고 싶은 축의 원을 선택하여 드래그하여 원하는 방향으로 오브젝트를 회전시킬 수 있습니다.
 ![d](images/1_RotTool.gif)
 
 **3. 크기 조절 툴**
 
 ![d](images/1_ScaleTool.PNG)
+
 이동 툴과 비슷하게, 원하는 방향의 화살표를 클랙해서 드래그하여 해당 방향으로 오브젝트의 크기를 조절할 수 있습니다.
 ![d](images/1_ScaleTool.gif)
 
