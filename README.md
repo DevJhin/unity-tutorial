@@ -4,12 +4,11 @@
 ### Chapter 1: Hello, Unity
 #### 1. [Intro](Ch1_HelloUnity/1_Intro.md)
 #### 2. [GameObject](Ch1_HelloUnity/2_GameObject.md)
-
+#### 3. [Components]
 
 ## Chapter 2: Unity Basic Scripting
-#### 1. [Components]
-#### 2. [Event Functions]
-#### 3. [Input & Time]
+#### 1. [Event Functions]
+#### 2. [Input & Time]
 
 ## Chapter 3: Physics
 #### 1. [Rigidbody & Collider]
