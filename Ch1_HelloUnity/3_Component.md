@@ -37,6 +37,7 @@ Transform은 게임 오브젝트의 위치(Position), 회전(Rotation), 크기(S
 Camera 는 게임 화면을 렌더링하는 기능을 가진 핵심적인 컴포넌트 중 하나입니다. 에디터의 Game View에서 보이는 장면은 바로 이 Camera 컴포넌트를 통해서 그려지게 됩니다. 따라서, 화면이 게임 캐릭터를 따라 같이 움직이는 기능을 만들고 싶다면 카메라 컴포넌트를 가진 게임 오브젝트를 조작해야 합니다.
 
 또한, Camera 컴포넌트를 통하여 카메라 background 설정, Projection 방식 및 Culling 대상 설정과 Clipping Distance 및 Field of View(FOV)와 같은 뷰 포트 설정을 수행할 수 있습니다.
+
 ![](images/Camera.gif)
 
 > Game View에 렌더링 되는 화면은 Scene에 존재하는 카메라의 위치와 방향에 따라 움직입니다.
@@ -69,6 +70,7 @@ Camera 는 게임 화면을 렌더링하는 기능을 가진 핵심적인 컴포
 
 
 #### 1. Directional Light
+
 ![](images/DirectionalLight.png)
 
 >환경 전체를 비추는 한 방향에서 오는 빛. 야외환경에서는 보통 자연광을 연출하기 위해 사용합니다.
@@ -77,6 +79,7 @@ Camera 는 게임 화면을 렌더링하는 기능을 가진 핵심적인 컴포
 
 
 #### 2. Point Light
+
 ![](images/PointLight.gif)
 
 
@@ -143,6 +146,7 @@ Sprite 컴포넌트를 통해 우리가 원하는 이미지(텍스처)를 선택
 
 ## UI 관련
 메뉴 화면의 시작 버튼과 같은 User Interface 관련 기능은 3D 환경이 아니라 2D 모니터 화면과 상호작용해야 하기 때문에 일반적인 게임 객체와는 조금 다른 방식으로 다룰 필요가 있습니다. 유니티 엔진에서는 이러한 UI 오브젝트들을 쉽게 다룰 수 있도록 다양한 UI Component기능들을 제공합니다.
+
 ![](images/UIComponents.gif)
 
 >게임 화면 위에 텍스트, 버튼, 슬라이더 등 상호작용 가능한 UI 오브젝트를 그릴 수 있다.
