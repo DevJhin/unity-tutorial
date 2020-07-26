@@ -34,22 +34,36 @@ __생성이 잘 되지 않았나요?__
 >프로그램에서 출력된 Log 메시지들은 Console창에서 확인할 수 있습니다.
 
 
-### Console 창
-Console 창에서는 유니티 엔진에서 출력된 다양한 로그 기록들을 확인할 수 있습니다.
-
 ### Log 메시지 출력하기
-그렇다면 우리가 메시지를 출력하
-
-
-### Console 창에서는
+그렇다면 우리가 프로그램에서 Unity 콘솔 창에 메시지를 출력하는 방법을 알아보겠습니다. 유니티 엔진은 Debug라는 클래스를 통해서 Log 메시지를 출력하는 몇가지 함수들을 용도에 맞게 제공하고 있습니다.
 
 1. `Debug.Log`
-
+일반적인 상황에서의 Log 메시지를 출력합니다.
 
 2. `Debug.LogWarning`
+오류는 아니지만 주의가 필요한 내용을 표시하기 위해 사용되며, 노란색 경고로 표시됩니다.
 
 3. `Debug.LogError`
 에러 상황을 표시하기 위해 사용되며, 빨간색 글자로 표시됩니다.
+
+#### 예제 코드
+Log, LogWarning, LogError가 콘솔창에 어떻게 출력되는지 한 번 직접 확인해보겠습니다. Deubg 클래스의 Log 함수들을 사용해서 원하는 문구를 출력해봅시다.
+
+```cs
+public class LogTest : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        Debug.Log("Hello, Log!");
+        Debug.LogWarning("Hello, LogWarning!");
+        Debug.LogError("Hello, LogError!");
+    }
+}
+```
+
+#### 실행 결과
+![](images/LogResult.png)
 
 
 **주의하세요**
@@ -70,10 +84,6 @@ public class TestScript : MonoBehaviour
     //Class안에 Rigidbody 컴포넌트를 선언하였습니다.
     public Rigidbody rigidbody;
 
-    void Start()
-    {
-
-    }
 }
 
 
@@ -81,6 +91,7 @@ public class TestScript : MonoBehaviour
 
 #### 에러 발생!
 하지만, 선언만으로는 `rigidbody`를 바로 사용할 수 없습니다. `rigidbody`는 말그대로 다른 Rigidbody객체를 참조하는 변수이기 때문에, rigidbody가 참조할 객체를 설정해줄 필요가 있기 때문입니다. `rigidbody`에 다른 객체를 설정해 주지 않고 사용을 시도하면 오류가 발생합니다. rigidbody가 아무것도 참조하고 있지 않기 때문에 주어진 동작을 수행할 수 없기 때문입니다.
+
 
 ```cs
 public Rigidbody rigidbody; // Rigidbody가 아무것도 참조하고 있지 않습니다.
@@ -91,16 +102,29 @@ void Start()
     rigidbody.useGravity = false; // 오류 발생!(Null Reference Error)
 }
 ```
-다른 컴포넌트의 참조를 우리가 선언한 `rigidbody` 변수에 할당하는 방법은 크게 2가지가 있습니다.
-
-### 방법 1. 에디터를 통해 참조하기
-가장 간단한 방법은 에디터에서 Drag & Drop 방식으로 할당하는 방법입니다.
-
 
 ![](images/NullReferenceError.png)
 
-__알아두세요__
+> Reference를 제대로 설정해주지 않고 rigidbody를 사용하려고 하면 오류가 발생합니다.
 
+
+다른 컴포넌트의 참조를 우리가 선언한 `rigidbody` 변수에 할당하는 방법은 크게 2가지가 있습니다.
+
+### 방법 1. 에디터를 통해 참조하기
+가장 간단한 방법은 Inspector 창에서 Drag & Drop 방식으로 할당하는 방법입니다. 원하는 컴포넌트를 클릭하고, 지정된 Reference 변수로 드래그해서 가져갑니다. 이제, 우리가 선언한 `rigidbody` 변수는 우리가 드래그해서 가져간 `Rigidbody`컴포넌트를 참조하게 됩니다.
+
+![](images/DragDropReference.gif)
+
+__알아두세요__
+> 혹시 우리가 TestScript 파일에 선언한 `rigidbody` 변수가 Inspector창에 드러나지 않으면, 변수를 `public`으로 선언하였는지 확인해보세요. Class에 선언한 변수가 Inspector창에 드러나려면 변수가 public으로 선언해야 합니다.
+
+```cs
+//Inspector 창에 뜬다
+public Rigidbody rigidbody;
+
+//Inspector 창에 뜨지 않는다.
+Rigidbody rigidbody;
+```
 
 
 ### 방법 2. 스크립트에서 참조하기
@@ -114,9 +138,9 @@ rigidbody = GetComponent<Rigidbody>();
 
 
 **참고하세요!**
-> Transform도 컴포넌트의 일종이지만, 굳이 `GetComponent<Transform>()`를 사용해서 가져올 필요는 없습니다. Transform은 `transform`프로퍼티를 통해 바로 가져올 수 있습니다.
+> Transform도 컴포넌트의 일종이지만, 굳이 `GetComponent<Transform>()`를 사용해서 가져올 필요는 없습니다. Transform은 `transform`프로퍼티를 통해 바로 사용할 수 있습니다.
 
 ```cs
 Debug.Log(transform.position);
 ```
-> GetComponent
+> GetComponent를 사용하지 않고 transform을 통해서 바로 접근할 수 있습니다.

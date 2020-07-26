@@ -13,8 +13,6 @@ Vector3 mousePosition = Input.mousePosition;
 ```
 mousePosition은 현재 프레임에서 마우스 포인터가 위치해있는 Screen에서의 픽셀 위치를 나타내며, 실제 3D 공간상에서의 좌표와는 다릅니다.  
 
-__알아두세요__
-마우스
 
 ```cs
 
@@ -37,12 +35,14 @@ void Update()
 #### 마우스 버튼 코드
 일반적으로 마우스에는 왼쪽, 오른쪽, 가운데(마우스 휠)의 3가지 버튼이 존재합니다. 유니티에서는 이 버튼들을 아래와 같이 `int`값으로 표현합니다.
 
- - `0`
- 마우스 왼쪽 버튼
- - `1`
- 마우스 오른쪽 버튼
- - `2`
- 마우스 휠 버튼
+
+|int 값| 마우스 버튼|
+|-|-|
+|0| 마우스 왼쪽 버튼|
+|1| 마우스 오른쪽 버튼|
+|2| 마우스 휠 버튼|
+
+
 
 #### 함수
  - `Input.GetMouseButtonDown('마우스 버튼 코드')`
@@ -52,9 +52,12 @@ void Update()
  - `Input.GetMouseButtonUp('마우스 버튼 코드')`
  마우스 버튼을 누르고 있다가 떼었을 때 한 번만 실행하고 싶을 때 사용합니다.
 
+####예제 코드
+위에서 설명 드린
+
 ```cs
 void Update(){
-  // 마우스 버튼 클릭시에 한 번 실행
+  // 마우스 왼쪽 버튼 클릭시에 한 번 실행
   if(Input.GetMouseButtonDown(0))
   {
       Debug.Log("Mouse Clicked!");
@@ -64,31 +67,34 @@ void Update(){
   {
       Debug.Log("Mouse Clicking!");
   }
-  // 마우스 버튼을 클릭하다가 놓았을 때 한 번 실행
+  // 마우스 버튼을 놓았을 때 한 번 실행
   else if(Input.GetMouseButtonUp(0))
   {
       Debug.Log("Mouse Released!");
   }
 }
 ```
-실행 결과
-
-
+#### 실행 결과
+![](images/MouseInputResult.gif)
 
 
 ### 키보드 입력
-키보드에는 아주 많은 수의 버튼이 존재하기 때문에, 마우스 버튼 처럼 0, 1, 2..이런 식의 정수로 나타내기 어렵습니다.
-따라서, 키 입력에서는 KeyCode라는 enum 형식의 데이터 타입을 사용하여 Key에 대한 정보를 처리합니다.
+키보드에는 아주 많은 수의 버튼이 존재하기 때문에, 마우스 버튼 처럼 0, 1, 2..이런 식의 정수로 나타내기 어렵습니다. 따라서, 키 입력에서는 KeyCode라는 enum 형식의 데이터 타입을 사용하여 Key 버튼의 종류를 구분합니다.
 
 ### KeyCode
-Enter, Esc, Enter, Space키 그리고 숫자 키와 알파벳 키 등등 키보드에 있는 버튼들이 지정되어 있습니다.
+Enter, Esc, Enter, Space키 그리고 숫자 키와 알파벳 키 등등 키보드에 있는 버튼들이 지정되어 있습니다. 몇 가지를 예시를 들자면 아래와 같습니다.
 
+|`KeyCode` enum 값| 키보드 버튼|
+|-|-|
+|KeyCode.Space| Space 키|
+|KeyCode.Return| Return(엔터) 키|
+|KeyCode.W| 알파벳 W 키|
 
 
 ### 함수
 마우스 입력과 마찬가지로, Key 입력에도 입력을 확인하는 함수가 존재합니다.
 
-어떤 키가 눌렸는지 확인하기 위해서는 그 키에 대한 KeyCode를 찾아서 아래의 함수에 인수로 넣어주면 됩니다.
+어떤 키가 눌렸는지 확인하기 위해서는 그 키에 대한 KeyCode를 찾아서 아래의 함수의 인수로 넣어주면 됩니다.
 
  1.	`Input.GetKeyDown(KeyCode keyCode)`
  키보드 버튼을 처음 눌렀을 때 한 번만 실행하고 싶을 때 사용합니다.
@@ -97,6 +103,7 @@ Enter, Esc, Enter, Space키 그리고 숫자 키와 알파벳 키 등등 키보�
  3.	`Input.GeyKeyUp(KeyCode keyCode)`
  키보드 버튼을 누르고 있다가 떼었을 때 한 번만 실행하고 싶을 때 사용합니다.
 
+###  예시코드
 
  ```cs
  void Update(){
@@ -117,3 +124,5 @@ Enter, Esc, Enter, Space키 그리고 숫자 키와 알파벳 키 등등 키보�
    }
  }
  ```
+ #### 실행 결과
+ ![](images/KeyboardInputResult.gif)
