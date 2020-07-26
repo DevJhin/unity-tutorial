@@ -11,7 +11,7 @@
 #### 2. [Event Functions](Ch2_BasicScripting/2_EventFunctions.md)
 #### 3. [Data Types](Ch2_BasicScripting/3_DataTypes.md)
 #### 4. [Input](Ch2_BasicScripting/4_Input.md)
-#### 5. [Time]
+#### 5. [Time](Ch2_BasicScripting/5_Time.md)
 
 ## Chapter 3: Physics
 #### 1. [Rigidbody & Collider]
