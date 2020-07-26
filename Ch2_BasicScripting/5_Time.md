@@ -13,8 +13,7 @@
 
  앞의 예제에서 오브젝트가 1초에 1m만큼 이동하기를 원했지만, 실제 실행을 해보면 그보다 훨씬 빨리 움직이는 것을 확인하셨을 것입니다. 그뿐만 아니라, 뭔가에 걸린 것처럼 끊기는 듯이 이동하는 것도 확인할 수 있습니다.
 
-
-![](imges/BadMovement.gif)
+![](images/CubeMovement.gif)
 
 > 도무지 1초에 1만큼 움직이는 것으로는 보이지 않는다.
 
@@ -62,11 +61,11 @@ Debug.Log(Time.time);
 ```cs
 void Update(){
   // 이제 y축 방향으로 초당 1의 속도로 이동합니다.
-  transform.position += Vector3.up * Time.deltaTime;
+  transform.position += Vector3.forward * Time.deltaTime;
 }
 ```
 
+이제 결과를 한 번 확인해봅시다.
+![](images/TimeIndependent.gif)
 
-
-**잊지 마세요!**
-> `Vector3`에 `float`를 곱할 수 있습니다. 결과값은 실수배를 한 Vector3 입니다.
+이제 Cube가 정상적으로 1초에 1씩 정상적으로 움직이는 것을 확인할 수 있습니다. Cube의 움직임도 훨씬 부드러워진 것 같습니다.

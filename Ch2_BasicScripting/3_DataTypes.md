@@ -158,16 +158,6 @@ Vector3 b = new Vector3(4,5,6);
 ```
 Vector3는 다양한 연산들을 지원하는 메소드를 가지고 있습니다.
 
-Dot Product
-
-```cs
-//Dot product 연산
-float magnitude = a.magnitude;
-//
-float distance = Vector3.Distance(a, b);
-
-float dot = Vector3.Dot(a, b);
-```
 #### magnitude
 주어진 벡터의 크기를 계산합니다.
 
@@ -181,8 +171,6 @@ float magnitude = a.magnitude;
 ```cs
 float distance = Vector3.Distance(a, b);
 ```
-
-
 
 ### Example: 두 물체 사이의 중점 구하기
 이제 `float`, `Vector3`, 'string'를 활용하는 것을 연습해보기 위해 두 GameObject 사이의 중점을 구하고, 그 위치에 다른 GameObject를 배치하는 간단한 예제 프로그램을 만들어봅시다.
@@ -229,4 +217,4 @@ midObject.transform.position = midPos;
 #### 실행 결과
 ![](images/MidPointExample.gif)
 
-중간에 흰색 오브젝트가 항상 양쪽에 존재하는 오브젝트에 중간 지점에 위치하게 됩니다.
+MidObject 가 항상 양쪽에 존재하는 오브젝트에 중간 지점에 위치하는 것을 확인할 수 있습니다. 이런 식으로 Vector3와 수학 함수들을 사용해서 중점 위치를 계산하는 데 성공한 것을 확인할 수 있습니다.

@@ -14,6 +14,9 @@ Vector3 mousePosition = Input.mousePosition;
 mousePosition은 현재 프레임에서 마우스 포인터가 위치해있는 Screen에서의 픽셀 위치를 나타내며, 실제 3D 공간상에서의 좌표와는 다릅니다.  
 
 
+__알아두세요__
+>Input.mousePosition을 사용해서 매 프레임마다 마우스 위치의 변화값을 계산할 수도 있습니다. 이전 프레임에서의 mousePosition을 기록하는 Vector3 멤버변수를 사용해서, 이전 프레임과 현재 프레임에서의 마우스 위치 변화를 계산합니다.
+
 ```cs
 
 Vector3 lastMousePosition;
@@ -22,8 +25,7 @@ void Update()
 {
   Vector3 deltaMousePosition = Input.mousePosition - lastMousePosition;
   //이번 프레임
-  lastMousePosition = Input,mousePosition;
-
+  lastMousePosition = Input.mousePosition;
 }
 
 ```
