@@ -9,7 +9,7 @@
 
 ## 종류
 ### 1.	`Start()`
-게임이 시작되었을 때, 또는 오브젝트가 처음 생성되었을 때 실행되는 함수입니다.
+컴포넌트가 처음 생성되었을 때 한 번 실행되는 함수입니다. 보통은 게임을 처음 실행했을 때와 게임 오브젝트가 새로 생성되었을 때 실행됩니다.
 
   ```cs
   void Start()
@@ -23,49 +23,56 @@
 오브젝트의 이동과 같이, 매 프레임마다 갱신되어야 하는 작업은 Update에서 처리합니다.
 
   ```cs
-  //Do Something by every frame.
   void Update()
   {
+    //매 프레임마다 y축 방향으로 1 만큼 이동합니다.
     transform.position += Vector3.Up;
   }
   ```
-
 ### 3. `OnEnable()/OnDisable()`
-  컴포넌트(스크립트)가 활성화/비활성화 되었을 때 실행되는 함수입니다.
+컴포넌트(스크립트)가 활성화/비활성화 되었을 때 실행되는 이벤트 함수입니다.
 
-  유니티에서는 필요에 따라서 컴포넌트를 활성화 또는 비활성화 하는 것이 가능합니다.
-  컴포넌트를 활성화/비활성화 시키려면 아래와 같이 Editor에서 체크박스를 클릭하는 방법도 있으며
+유니티에서는 필요에 따라서 컴포넌트를 활성화/비활성화할 수 있습니다. 컴포넌트가 비활성화 되면 컴포넌트가 동작하지 않으며 `Update()`와 같은 함수도 실행되지 않습니다.
+
+아래와 같이 Inspector창에서 체크박스를 클릭하여 활성화/비활성화 상태를 설정할 수 있습니다,
 
 ![](images/script_enable.png)
 
-  아니면, 스크립트를 통해 활성화/비활성화 시키는 방법도 있습니다.
 
-  ```cs
+__알아두세요__
+ >스크립트를 통해서도 컴포넌트를 활성화/비활성화 시킬 수 있습니다.
 
-  public RigidBody rigidBody;
+> ```cs
+>
+>  public RigidBody rigidBody;
+>
+>  void Start()
+>  {
+>    //Rigidbody 컴포넌트를 비활성화 시킨다.
+>    rigidBody.enabled = false;
+>  }
+>
+>  ```
 
-  void Start()
-  {
-    //Rigidbody 컴포넌트를 비활성화 시킨다.
-    rigidBody.enabled = false;
-  }
-
-
-  ```
-
-  하지만, 스크립트의 상태가 전환될 때 마다 특정 작업을 수행해야 하는 상황이 있습니다. 따라서, 이런 상황을 대처하기 위해, 유니티 엔진에서는 `OnEnable`과 `OnDisable`함수가 마련되어 있습니다.
-
+#### 예제 코드:
 ```cs
   void OnEnable()
   {
-      //Do Something on enable.
+      Debug.Log("OnEnable Called!");
   }
 
-  void OnDiable()
+  void OnDisable()
   {
-      //Do Something on disable.
+      Debug.Log("OnDisable Called!");
   }
 ```
+
+#### 실행 결과:
+Inspector창에서 컴포넌트를 활성화/비활성화할 때마다 우리가 작성한 Log가 출력되는 것을 확인할 수 있습니다.  
+
+![]()
+
+
 
 **알아두세요**
 > 앞서 설명드린 이벤트 함수들은 사실 많이 쓰이는 몇가지만 뽑은 것으로, 이 외에도 다양한 상황에서 활용할 수 있는 다양한 이벤트 함수들이 존재합니다.
@@ -73,15 +80,24 @@
 > 특히, `OnTriggerEnter/Stay/Exit`, `OnCollsionEnter/Stay/Exit`과 같이 충돌판정과 관련된 **물리 이벤트 함수** 들은 여기서 다루지 않고, 이후의 **'Physics'** 챕터에서 더 자세히 다루도록 하겠습니다.
 
 
-## 예제:
+### 예제: Cube 움직여보기
+이번 예제에서는 Cube 오브젝트가 위쪽으로 계속 이동하는 간단한 프로그램을 만들어봅시다.
 
+Cube가 처음 한 번만 이동하는게 아니라 게임 실행 중에 계속 이동해야 되기 대문에, 처음 한번만 실행되는 `Start()` 함수 대신, `Update()`함수를 사용하면 좋을 것 같습니다.
 
+```cs
+void Update()
+{
+  //Trasnform의
+   trasnform.position += Vector3.Up;
+}
+
+```
 
 ## 비고
 사실, 유니티 엔진의 Event 함수의 종류는 앞서 소개한 것들보다 훨씬 많이 존재합니다.
 
-`Awake()`, `FixedUpdate()`, `LateUpdate()` 등의 다양한 상황에서 실행되는 다른 event 함수들이 존재하지만,
-간단한 작업이라면 위의 `Start()`, `Update()`만으로도 충분하기 때문에 지금은 다루지 않도록 하겠습니다.
+`Awake()`, `FixedUpdate()`, `LateUpdate()` 등의 다양한 상황에서 실행되는 다른 event 함수들이 존재하지만, 사실 이러한 event 함수들을 모두 소개하는 것은 사실상 불가능하며, 대부분의 작업들은 위에서 소개한 `Start()`와 `Update()` 함수, 그리고 이후 Phycis 챕터에서 배울 몇몇 물리 이벤트 함수들만으로도 충분히 구현이 가능합니다.
 
-
-유니티 엔진의 이벤트 함수에 대한 더 자세한 내용이 알고싶으시다면 관련 [Unity API](https://docs.unity3d.com/Manual/ExecutionOrder.html)를 확인하시기 바랍니다.  
+__알아두세요__
+유니티 엔진의 이벤트 함수에 대한 더 자세한 내용이 알고싶으시다면 관련 [Unity API](https://docs.unity3d.com/Manual/ExecutionOrder.html)문서를 확인하시기 바랍니다. 이 문서에서는 이벤트 함수에 대한 상세한 설명 뿐만 아니라

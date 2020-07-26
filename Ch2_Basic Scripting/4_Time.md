@@ -1,117 +1,22 @@
-# Input & Time
-유니티 엔진에서, 입력과 관련된 처리는 Input 클래스가 담당합니다.
+# Time
+이전 EventFunction 예제에서 Update 함수에서 Cube를 앞으로 움직이는 간단한 예제 프로그램을 작성했었습니다. 하지만 그때도 언급했었듯이, Cube가 우리가 의도한대로 움직이지 않았습니다. 이번 챕터에서는 왜 그런 현상이 발생했는지, 그리고 유니티의 Time클래스를 활용해서 이 문제를 어떻게 해결할 수 있는지 알아보겠습니다.
 
-Input 클래스는 현재 사용자의 입력을 확인할 수 있는 다양한 함수들을 가지고 있는데, 일반적으로는 아래와 같은 방식으로 사용합니다.
-
-
- ## 1. 마우스 입력
-
-### 마우스 이동
-마우스의 이동에 대한 정보를 가져옵니다.
-
-```cs
-Vector3 mousePosition = Input.mousePosition;
-```
-
-
-
-### 마우스 입력
-
-#### 마우스 버튼 코드
-일반적으로 마우스에는 왼쪽, 오른쪽, 가운데(마우스 휠)의 3가지 버튼이 존재합니다.
-
-
- - `0`
- 마우스 왼쪽 버튼
- - `1`
- 마우스 오른쪽 버튼
-
-#### 함수
- - `Input.GetMouseButtonDown('마우스 버튼 코드')`
- 마우스 버튼을 처음 눌렀을 때 한 번만 실행하고 싶을 때 사용합니다.
- - `Input.GetMouseButton('마우스 버튼 코드')`
- 마우스 버튼을 누르고 있을 때 반복해서 실행하고 싶을 때 사용합니다.
- - `Input.GetMouseButtonUp('마우스 버튼 코드')`
- 마우스 버튼을 누르고 있다가 떼었을 때 한 번만 실행하고 싶을 때 사용합니다.
-
-```cs
-//아래 코드를 프로그램에서 실행해서 console 창에 어떻게 출력되는지 확인해보자.
-void Update(){
-  // 마우스 버튼 클릭시에 한 번 실행
-  if(Input.GetMouseButtonDown(0))
-  {
-      Debug.Log("Mouse Clicked!");
-  }
-  // 마우스 버튼 클릭 중에 계속 실행
-  else if(Input.GetMouseButton(0))
-  {
-      Debug.Log("Mouse Clicking!");
-  }
-  // 마우스 버튼을 클릭하다가 놓았을 때 한 번 실행
-  else if(Input.GetMouseButtonUp(0))
-  {
-      Debug.Log("Mouse Released!");
-  }
-}
-```
-
-### 키 입력
-키보드에는 너무나도 많은 버튼이 존재하기 때문에, 마우스 버튼 처럼 0, 1, 2..이런 식의 정수로 나타내기 어렵습니다.
-
-따라서, 키 입력에서는 KeyCode라는 enum 형식의 데이터 타입을 사용하여 Key에 대한 정보를 처리합니다.
-
-
-
-
-### 함수
-마우스 입력과 마찬가지로, Key 입력에도 입력을 확인하는 함수가 존재합니다.
-
-어떤 키가 눌렸는지 확인하기 위해서는 그 키에 대한 KeyCode를 찾아서 아래의 함수에 인수로 넣어주면 됩니다.
-
- 1.	`Input.GetKeyDown(KeyCode keyCode)`
- 키보드 버튼을 처음 눌렀을 때 한 번만 실행하고 싶을 때 사용합니다.
- 2.	`Input.GetKey(KeyCode keyCode)`
-키보드 버튼을 누르고 있을 때 반복해서 실행하고 싶을 때 사용합니다.
- 3.	`Input.GeyKeyUp(KeyCode keyCode)`
- 키보드 버튼을 누르고 있다가 떼었을 때 한 번만 실행하고 싶을 때 사용합니다.
-
-
- ```cs
- void Update(){
-   // Space 키 눌렀을 때 한 번 실행
-   if(Input.GetKeyDown(KeyCode.Space))
-   {
-       Debug.Log("Space Pressed!");
-   }
-   // Space 키를 누르는 중에 계속 실행
-   else if(Input.GetKey(KeyCode.Space))
-   {
-       Debug.Log("Space Pressing!");
-   }
-   // Space 키를 누르다가 놓았을 때 한 번 실행
-   else if(Input.GetKeyUp(KeyCode.Space))
-   {
-       Debug.Log("Space Released!");
-   }
- }
- ```
-
- ## Time Dependent vs Time Independent
+## Time Dependent vs Time Independent
 
  ```cs
  //Bad Code 예시
  void Update()
  {
-   //초당 1만큼이 아니라, 프레임당 y축 방향으로 1씩 이동한다,
-   transform.position += Vector3.up;
+   transform.position += Vector3.forward;
  }
  ```
 
  앞의 예제에서 오브젝트가 1초에 1m만큼 이동하기를 원했지만, 실제 실행을 해보면 그보다 훨씬 빨리 움직이는 것을 확인하셨을 것입니다. 그뿐만 아니라, 뭔가에 걸린 것처럼 끊기는 듯이 이동하는 것도 확인할 수 있습니다.
 
 
-![d]()
+![](imges/BadMovement.gif)
 
+> 도무지 1초에 1만큼 움직이는 것으로는 보이지 않는다.
 
  왜 이런 오류 현상이 발생하는 것일까요?
 
@@ -160,6 +65,8 @@ void Update(){
   transform.position += Vector3.up * Time.deltaTime;
 }
 ```
+
+
 
 **잊지 마세요!**
 > `Vector3`에 `float`를 곱할 수 있습니다. 결과값은 실수배를 한 Vector3 입니다.
