@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 마우스 포인터의 위치
+/// Raycast 기능을 사용하여 Floor에 폭탄 배치 지점을 지정하는 클래스.
 /// </summary>
 public class GrenadeLocater : MonoBehaviour
 {
-    Camera Cam;
-
-    LayerMask FloorLayerMask;
-
     public GameObject LocaterUI;
     public GameObject Grenade;
 
+
+    ///현재 플레이어 카메라
+    private Camera Cam;
+
+    ///바닥 레이어
+    private LayerMask FloorLayerMask;
+    
     void Start()
     {
         //현재 사용 중인 카메라를 참조합니다.
         Cam = Camera.main;
         
-        //특정 Collider에 대해서만 Raycast를 수행할 수 있도록
+        //특정 Collider(Floor)에 대해서만 Raycast가 수행되도록 레이어 마스크를 설정해줍니다. 
         FloorLayerMask = LayerMask.GetMask("Floor");
 
         LocaterUI.SetActive(false);
@@ -53,7 +56,7 @@ public class GrenadeLocater : MonoBehaviour
                     Grenade.transform.position = locatePoint;
                     Grenade.SetActive(true);
                     
-                    //Grenade 배치 후, 이 컴포넌트를 비활성화한다.
+                    //Grenade 배치 후, 이 컴포넌트를 비활성화합니다.
                     this.enabled = false;                    
                 }
             }
@@ -67,11 +70,17 @@ public class GrenadeLocater : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 화면 상에서의 마우스 포인터의 위치를 World 상에서의 Ray로 변환합니다.
+    /// </summary>
+    /// <returns></returns>
     public Ray ScreenPosToRay()
     {
         Vector3 mousePosition = Input.mousePosition;
+        // 마우스 포인터 위치를 뷰포트 공간으로 변환합니다.
         Vector3 viewportPoint = Cam.ScreenToViewportPoint(mousePosition);
 
+        //변환한 뷰포트 위치에서 시작하는 Ray를 계산합니다.
         return Cam.ViewportPointToRay(viewportPoint);
     }
 
