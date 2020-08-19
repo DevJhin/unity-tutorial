@@ -4,7 +4,7 @@
 
 ![](images/NoColliderExample.gif)
 
-> Rigidbody를 적용한 물체들이 바닥에 부딪히지 않고 그냥 뚫고 내려가는 문제점이  
+> Rigidbody를 적용한 물체들이 바닥에 부딪히지 않고 그냥 뚫고 내려가는 심각한 문제점이 있습니다.
 
 
 ##Collider란?
@@ -153,11 +153,11 @@ void OnCollisionExit(Collision collision)
 
 먼저, 폭탄 오브젝트가 주변 Collider와 충돌하기 위해서는 Collider를 추가해주어야 합니다. 폭탄 오브젝트에 Sphere Collider 컴포넌트를 추가하여 충돌이 발생하도록 만들어 봅시다.
 
-![](images/SetupSphereCollider.gif)
+![](images/SetupSphereCollider.png)
 
 또한, 폭발에 휩쓸려 날아가는 상자 오브젝트에도 콜라이더를 설정해 주어야 할 것 같습니다.
 
-![](images/BoxColliderExample.png)
+![](images/SetupBoxCollider.png)
 
 상자에 형태에 맞게 BoxCollider를 사용하여 충돌 영역을 적절하게 설정해 주었습니다. 물론 상자의 형태와 정확히 일치하지는 않지만, 이 정도면 충분히 괜찮은 물리 효과를 연출할 수 있습니다.
 
