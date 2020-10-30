@@ -1,5 +1,5 @@
 
-#Collider와 충돌 이벤트 함수
+# Collider와 충돌 이벤트 함수
 이전 예제에서 RigidBody 컴포넌트를 활용하여 Grenade 오브젝트에 중력, 힘과 같은 물리적 효과를 적용해보았습니다. 하지만, Grenade 바닥이나 벽에 부딪히지 않고 뚫고 지나가는 것을 확인할 수 있었습니다. 어떻게 하면 Grenade가 주변 물체와 부딪혀서 튕기는 효과를 만들 수 있을까요?
 
 ![](images/NoColliderExample.gif)
@@ -7,7 +7,7 @@
 > Rigidbody를 적용한 물체들이 바닥에 부딪히지 않고 그냥 뚫고 내려가는 심각한 문제점이 있습니다.
 
 
-##Collider란?
+## Collider란?
 Collider는 물리 엔진이 물리 시뮬레이션을 수행할 때, 충돌을 검사하기 위한 영역을 정의합니다. RigidBody가 물체의 물리적 성질을 표현한다면, Collider는 물체의 물리적 형태를 정의한다고 볼 수 있습니다. 물리 엔진은 두 Collider가 서로 충돌한 상태인지, 충돌 했다면 어떤 방향/힘으로 충돌이 발생했는지 등 연산을 통해 물리 시뮬레이션을 수행합니다. 이러한 물리 시뮬레이션을 수행하게 되면
 
 Collider는 크게 Primitive Collider와 Mesh Collider 2가지가 존재합니다. 이제부터 이 2가지 Collider에 대해 알아봅시다.
@@ -20,18 +20,21 @@ Collider는 크게 Primitive Collider와 Mesh Collider 2가지가 존재합니�
 
 ### Sphere Collider
 구체 형태의 Collider로, 반경을 조정하여 크기를 조절할 수 있습니다.
+
 ![](images/sphere_collider.PNG)
 
 Sphere Collider는 공처럼 둥글고 굴러가기 좋은 형태의 물체의 Collider로 사용하는 데 적합합니다.
 
 ### Box Collider
 육면체 형태의 Collider로, 육면체의 중심 위치와 크기 등을 조절할 수 있습니다.
+
 ![](images/box_collider.PNG)
 
 Box Collider는 상자와 바닥 등, 각지고 평면적인 형태를 가진 물체의 Collier로 사용하는 데 적합합니다.
 
 ### Capsule Collider
 캡슐 형태의 Collider로, 캡슐의 반경과 높이 등을 조절할 수 있습니다.
+
 ![](images/capsule_collider.PNG)
 
 Capsule Collider는 사람 몸체, 유리병 등 둥글고 긴 형태를가진 물체의 Collider로 사용하는 데 적합합니다.
