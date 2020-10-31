@@ -1,5 +1,6 @@
 #	UGUI
 
+![](images/Example.gif)
 
 일반적인 게임 객체와는 달리, Text, Button, Image와 같은 객체들은 조금 다른 방식으로 렌더링됩니다.
 
@@ -19,8 +20,8 @@ Canvas는 유니티의 다양한 UI 객체들을 관리하는 직사각형 형�
 ### Scene에 Canvas 추가하기
 Scene에 Canvas를 추가하기 위해서는 이전에 GameObject를 생성할 때 사용했던 **생성 메뉴**의 UI . 이미지와 같은 새 UI 요소를 만들면 자동으로 Canvas가 생성됩니다. UI 컴포넌트가 Canvas의 child로 설정해야 한다는 것을 잊지 마세요.
 
-캔버스와 UI Component는 Scene에서 직사각형 형태의 영역으로 정의됩니다.
- 이렇게하면 게임 뷰를 항상 표시 할 필요없이 UI 요소를 쉽게 배치 할 수 있습니다.
+### RectTransform
+캔버스와 UI Component는 일반적인 GameObject의 Transform과는 달리 Scene에서 직사각형 형태의 영역으로 정의됩니다. 이러한 특수한 형태의 Transform을 RectTransform이라고 부르며, 아주 편리하게 UI 요소를 배치 할 수 있게 만들어주는 UI Component의 특징입니다.
 
 
 
