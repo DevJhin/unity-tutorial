@@ -14,7 +14,7 @@
 #### 5. [Time](Ch2_BasicScripting/5_Time.md)
 
 ## Chapter 3: Physics
-#### 1. [Rigidbody]<!--Ch3_Physics/1_Rigidbody.md-->
+#### 1. [Rigidbody](Ch3_Physics/1_Rigidbody.md)
 #### 2. [Collider](Ch3_Physics/2_Collider.md)
 
 ## Chapter 4: UGUI
