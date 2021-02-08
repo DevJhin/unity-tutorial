@@ -15,7 +15,7 @@
 
 ## Chapter 3: Physics
 #### 1. [Rigidbody](Ch3_Physics/1_Rigidbody.md)
-#### 2. [Collider](Ch3_Physics/2_Collider.md)
+#### 2. [Collision](Ch3_Physics/2_Collidsion.md)
 
 ## Chapter 4: UGUI
 #### 1. [Canvas](Ch4_UGUI/1_Canvas.md)
