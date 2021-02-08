@@ -45,11 +45,13 @@ UGUI는 Unity GUI의 줄인말로, 유니티 엔진이 기본적으로 제공하
 
 
 #### Rendering Mode
+
 ![](images/CanvasRenderingMode.png)
 
 Rendering Mode는 Canvas가 그려지는 방식(렌더링 모드)을 설정합니다. 기본적으로 Canvas는 게임 화면 위에 Canavs의 UI 요소들이 그려지는 **Overlay** 렌더링 방식을 사용하지만, 경우에 따라서는 이 방식을 사용할 수 없는 경우도 있습니다. 예를 들어, **VR** 컨텐츠에서는 기술적인 특성상 Overlay 방식을 절대 사용할 수 없습니다. 따라서, 현재 컨텐츠 상황에 맞게 적절한 Rendering 모들를 설정하는 것이 중요합니다.
 
 #### Screen Space - Overlay, Camera 모드
+
 ![](images/CanvasScreenSpace.png)
 
 * **Screen Space - Overlay 모드**는 Scene 위에 렌더링 된 화면 위에 UI 요소를 그립니다. 화면 크기가 조정되거나 해상도가 변경되면 Canvas는 이에 맞게 자동으로 크기를 변경합니다.
@@ -57,6 +59,7 @@ Rendering Mode는 Canvas가 그려지는 방식(렌더링 모드)을 설정합�
 * **Screen Space - Camera 모드**는 **Screen Space-Overlay 모드**와 유사하지만, 이 모드에서는 Canvas가 카메라 앞에 지정된 거리(Distance)만큼 떨어진 위치에서 Canvas 배치되어 렌더링됩니다. 따라서, Camera위치 변경에 따라 Canvas의 위치도 변경되며, 다른 Mesh에 가려지는 등 Canvas 밖에서 렌더링 되는 객체의 영향을 받을 수 있습니다.
 
 #### World Space 모드
+
 ![](images/CanvasWorldSpace.png)
 
 * World Space 모드는 다른 모드와는 다르게 작동하는데, 일반 GameObject처럼 캔버스와 UI 컴포넌트 들이가 3D 배치를 기반으로 장면의 다른 개체 앞이나 뒤에 렌더링됩니다.
